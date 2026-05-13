@@ -808,7 +808,8 @@ footer p{font-size:0.8rem;color:var(--text3);line-height:2;}
 <script>
 // ── DATA ──
 const SUPABASE_URL = 'https://kwfmoubntsdycwqwyglc.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_cbvs5NCstPCE3lsL3NJcWg_CDVelyVr';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt3Zm1vdWJudHNkeWN3cXd5Z2xjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NzAzOTQsImV4cCI6MjA5NDI0NjM5NH0.sDiFiypLj-Bo3xxR2H5BsfzWn4PnFiIdZcQbADfSQSY';
+const SUPABASE_REST = `${SUPABASE_URL}/rest/v1`;
 const ADMIN_PASS = 'kanshunin2024';
 
 const women = [
@@ -982,12 +983,13 @@ async function loadComments(all=false){
   const list = document.getElementById('commentsList');
   const viewBtn = document.getElementById('viewAllBtn');
   try{
-    let url = `${SUPABASE_URL}/rest/v1/comments?select=*&order=created_at.desc`;
+    let url = `${SUPABASE_REST}/comments?select=*&order=created_at.desc`;
     if(!all && !isAdmin) url += '&limit=3';
     const res = await fetch(url,{
       headers:{
         'apikey': SUPABASE_KEY,
-        'Authorization': `Bearer ${SUPABASE_KEY}`
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json'
       }
     });
     const data = await res.json();
@@ -1028,7 +1030,7 @@ async function submitComment(){
   if(!author||!content){msg.textContent='お名前とコメントを入力してください。';return;}
   msg.textContent='投稿中...';
   try{
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/comments`,{
+    const res = await fetch(`${SUPABASE_REST}/comments`,{
       method:'POST',
       headers:{
         'apikey': SUPABASE_KEY,
