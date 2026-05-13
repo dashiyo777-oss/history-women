@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本の女性偉人 — 歴史を彩った20人</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #fdf8f0;
+  --bg2: #f5ede0;
+  --bg3: #ede0cc;
+  --text: #2a1f14;
+  --text2: #5a4a3a;
+  --text3: #8a7a6a;
+  --accent: #c0392b;
+  --accent2: #d4a017;
+  --accent3: #8b2252;
+  --border: #d4c4a8;
+  --card: #fffcf7;
+  --shadow: rgba(80,40,10,0.12);
+  --modal-bg: rgba(20,10,5,0.75);
+  --nav-bg: rgba(253,248,240,0.95);
+}
+[data-theme="dark"] {
+  --bg: #12100e;
+  --bg2: #1c1815;
+  --bg3: #26211c;
+  --text: #f0e8d8;
+  --text2: #c8b898;
+  --text3: #907060;
+  --accent: #e05040;
+  --accent2: #d4a017;
+  --accent3: #c060a0;
+  --border: #3a2f25;
+  --card: #1e1a16;
+  --shadow: rgba(0,0,0,0.4);
+  --modal-bg: rgba(0,0,0,0.85);
+  --nav-bg: rgba(18,16,14,0.95);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Noto Serif JP',serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:background 0.4s,color 0.4s;
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:var(--nav-bg);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;
+  height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background 0.4s;
+}
+.nav-logo{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--accent);
+  letter-spacing:0.05em;
+}
+.nav-links{display:flex;gap:1.5rem;align-items:center;}
+.nav-links a{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:0.8rem;color:var(--text2);
+  text-decoration:none;letter-spacing:0.1em;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--accent);}
+.theme-btn{
+  background:none;border:1px solid var(--border);
+  border-radius:20px;padding:4px 12px;
+  font-size:0.75rem;color:var(--text2);cursor:pointer;
+  font-family:'Noto Sans JP',sans-serif;
+  transition:all 0.2s;
+}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);transition:all 0.3s;}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--nav-bg);flex-direction:column;padding:1rem 2rem;border-bottom:1px solid var(--border);}
+  .nav-links.open{display:flex;}
+  .hamburger{display:flex;}
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  background:var(--bg);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(192,57,43,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 20% 70%, rgba(212,160,23,0.07) 0%, transparent 60%);
+}
+.hero-pattern{
+  position:absolute;inset:0;opacity:0.04;
+  background-image:
+    repeating-linear-gradient(0deg,var(--text) 0,var(--text) 1px,transparent 1px,transparent 40px),
+    repeating-linear-gradient(90deg,var(--text) 0,var(--text) 1px,transparent 1px,transparent 40px);
+}
+.hero-deco{
+  position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+  width:500px;height:500px;
+  border:1px solid var(--border);
+  border-radius:50%;opacity:0.3;
+}
+.hero-deco2{
+  position:absolute;right:-20px;top:50%;transform:translateY(-50%);
+  width:380px;height:380px;
+  border:1px solid var(--accent);
+  border-radius:50%;opacity:0.15;
+}
+.hero-content{
+  position:relative;z-index:2;
+  text-align:center;padding:2rem;
+  max-width:800px;
+}
+.hero-kamon{
+  font-size:3rem;margin-bottom:1.5rem;
+  animation:float 4s ease-in-out infinite;
+  display:block;
+}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.hero-subtitle{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:0.75rem;letter-spacing:0.4em;
+  color:var(--accent);text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.hero-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(2.5rem,8vw,5rem);
+  font-weight:800;line-height:1.15;
+  color:var(--text);
+  margin-bottom:1.5rem;
+}
+.hero-title span{color:var(--accent);}
+.hero-desc{
+  font-size:1rem;line-height:2;
+  color:var(--text2);max-width:500px;margin:0 auto 2.5rem;
+}
+.hero-cta{
+  display:inline-block;
+  background:var(--accent);color:#fff;
+  padding:0.8rem 2.5rem;
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:0.85rem;letter-spacing:0.2em;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:all 0.3s;
+  clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+}
+.hero-cta:hover{background:var(--accent3);transform:translateY(-2px);}
+.scroll-hint{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-family:'Noto Sans JP',sans-serif;font-size:0.7rem;
+  letter-spacing:0.2em;color:var(--text3);
+  animation:bounce 2s infinite;
+}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
+.scroll-hint::after{content:'';display:block;width:1px;height:30px;background:var(--accent);opacity:0.5;}
+
+/* ── SECTION BASE ── */
+section{padding:6rem 2rem;}
+.section-header{text-align:center;margin-bottom:4rem;}
+.section-label{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:0.7rem;letter-spacing:0.5em;
+  color:var(--accent);text-transform:uppercase;
+  margin-bottom:0.8rem;display:block;
+}
+.section-title{
+  font-family:'Shippori Mincho',serif;
+  font-size:clamp(1.8rem,4vw,2.8rem);
+  font-weight:700;line-height:1.3;
+  color:var(--text);
+}
+.section-line{
+  width:60px;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  margin:1.2rem auto 0;
+}
+
+/* ── LOGIC ── */
+.logic{background:var(--bg2);}
+.logic-grid{
+  max-width:1000px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;
+}
+.logic-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:2rem 1.5rem;
+  position:relative;overflow:hidden;
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.logic-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));
+}
+.logic-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px var(--shadow);}
+.logic-num{
+  font-family:'Shippori Mincho',serif;
+  font-size:2.5rem;font-weight:800;
+  color:var(--accent);opacity:0.2;
+  position:absolute;top:1rem;right:1.2rem;
+  line-height:1;
+}
+.logic-icon{font-size:1.8rem;margin-bottom:0.8rem;}
+.logic-ttl{
+  font-family:'Shippori Mincho',serif;
+  font-size:1rem;font-weight:700;
+  color:var(--text);margin-bottom:0.5rem;
+}
+.logic-txt{font-size:0.85rem;line-height:1.8;color:var(--text2);}
+
+/* ── TOP3 ── */
+.top3{background:var(--bg);}
+.top3-grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;
+}
+@media(max-width:800px){.top3-grid{grid-template-columns:1fr;}}
+.top3-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:2.5rem 2rem;text-align:center;
+  position:relative;cursor:pointer;
+  transition:all 0.35s;
+  overflow:hidden;
+}
+.top3-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  opacity:0;transition:opacity 0.35s;z-index:0;
+}
+.top3-card:hover::after{opacity:0.06;}
+.top3-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px var(--shadow);}
+.top3-rank{
+  font-family:'Shippori Mincho',serif;
+  font-size:0.75rem;letter-spacing:0.3em;
+  color:var(--accent2);margin-bottom:1rem;
+  display:block;position:relative;z-index:1;
+}
+.top3-avatar{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;margin:0 auto 1.2rem;
+  position:relative;z-index:1;
+}
+.top3-name{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.4rem;font-weight:700;
+  color:var(--text);margin-bottom:0.3rem;
+  position:relative;z-index:1;
+}
+.top3-era{
+  font-size:0.75rem;color:var(--accent);
+  letter-spacing:0.2em;margin-bottom:1rem;
+  position:relative;z-index:1;
+}
+.top3-desc{
+  font-size:0.85rem;line-height:1.8;
+  color:var(--text2);position:relative;z-index:1;
+}
+.top3-card.rank1{border-color:var(--accent2);border-width:2px;}
+.top3-card.rank1 .top3-avatar{background:linear-gradient(135deg,#d4a017,#f0c040);}
+
+/* ── ALL 20 GRID ── */
+.all-women{background:var(--bg2);}
+.filter-bar{
+  display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;
+  margin-bottom:3rem;
+}
+.filter-btn{
+  background:none;border:1px solid var(--border);
+  padding:6px 16px;font-family:'Noto Sans JP',sans-serif;
+  font-size:0.75rem;letter-spacing:0.1em;
+  color:var(--text2);cursor:pointer;
+  border-radius:20px;transition:all 0.2s;
+}
+.filter-btn:hover,.filter-btn.active{
+  background:var(--accent);color:#fff;border-color:var(--accent);
+}
+.women-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.2rem;
+}
+.woman-card{
+  background:var(--card);border:1px solid var(--border);
+  padding:1.5rem 1.2rem;text-align:center;
+  cursor:pointer;transition:all 0.3s;
+  position:relative;overflow:hidden;
+}
+.woman-card::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:0;background:var(--accent);opacity:0.05;
+  transition:height 0.3s;
+}
+.woman-card:hover::before{height:100%;}
+.woman-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px var(--shadow);}
+.woman-rank{
+  position:absolute;top:8px;left:10px;
+  font-family:'Shippori Mincho',serif;
+  font-size:0.7rem;color:var(--accent2);letter-spacing:0.1em;
+}
+.woman-avatar{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent3));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin:0 auto 0.8rem;
+}
+.woman-name{
+  font-family:'Shippori Mincho',serif;
+  font-size:1rem;font-weight:700;color:var(--text);
+  margin-bottom:0.2rem;
+}
+.woman-era{font-size:0.7rem;color:var(--accent);letter-spacing:0.15em;}
+.woman-field{
+  display:inline-block;margin-top:0.5rem;
+  font-size:0.65rem;padding:2px 8px;
+  border:1px solid var(--border);border-radius:10px;
+  color:var(--text3);letter-spacing:0.05em;
+}
+.woman-card.hidden{display:none;}
+
+/* ── TIMELINE ── */
+.timeline{background:var(--bg);}
+.timeline-wrap{max-width:900px;margin:0 auto;position:relative;}
+.timeline-wrap::before{
+  content:'';position:absolute;left:50%;top:0;bottom:0;
+  width:1px;background:var(--border);transform:translateX(-50%);
+}
+@media(max-width:600px){.timeline-wrap::before{left:20px;}}
+.tl-item{
+  display:flex;gap:2rem;margin-bottom:3rem;
+  align-items:flex-start;
+}
+.tl-item:nth-child(even){flex-direction:row-reverse;}
+@media(max-width:600px){
+  .tl-item,.tl-item:nth-child(even){flex-direction:row;padding-left:50px;}
+}
+.tl-side{flex:1;}
+.tl-center{
+  display:flex;flex-direction:column;align-items:center;
+  padding-top:4px;flex-shrink:0;
+}
+.tl-dot{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--accent);border:2px solid var(--bg);
+  box-shadow:0 0 0 3px var(--accent);
+  z-index:1;
+}
+.tl-card{
+  background:var(--card);border:1px solid var(--border);
+  padding:1.2rem 1.5rem;
+}
+.tl-era{
+  font-family:'Shippori Mincho',serif;
+  font-size:0.7rem;letter-spacing:0.3em;
+  color:var(--accent);margin-bottom:0.5rem;display:block;
+}
+.tl-ttl{
+  font-family:'Shippori Mincho',serif;
+  font-size:1rem;font-weight:700;color:var(--text);
+  margin-bottom:0.4rem;
+}
+.tl-txt{font-size:0.82rem;line-height:1.8;color:var(--text2);}
+
+/* ── COMMENTS ── */
+.comments{background:var(--bg2);}
+.comments-inner{max-width:700px;margin:0 auto;}
+.comment-form{
+  background:var(--card);border:1px solid var(--border);
+  padding:2rem;margin-bottom:2.5rem;
+}
+.comment-form h3{
+  font-family:'Shippori Mincho',serif;
+  font-size:1.1rem;font-weight:700;color:var(--text);
+  margin-bottom:1.2rem;
+}
+.form-group{margin-bottom:1rem;}
+.form-group label{
+  display:block;font-family:'Noto Sans JP',sans-serif;
+  font-size:0.75rem;letter-spacing:0.1em;
+  color:var(--text2);margin-bottom:6px;
+}
+.form-group input,
+.form-group textarea{
+  width:100%;padding:10px 12px;
+  background:var(--bg);border:1px solid var(--border);
+  color:var(--text);font-family:'Noto Serif JP',serif;
+  font-size:0.9rem;outline:none;
+  transition:border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus{border-color:var(--accent);}
+.form-group textarea{height:100px;resize:vertical;}
+.submit-btn{
+  background:var(--accent);color:#fff;border:none;
+  padding:10px 2rem;cursor:pointer;
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:0.82rem;letter-spacing:0.2em;
+  transition:background 0.2s;
+  clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+}
+.submit-btn:hover{background:var(--accent3);}
+.admin-toggle{
+  display:inline-block;margin-top:0.8rem;
+  font-family:'Noto Sans JP',sans-serif;font-size:0.72rem;
+  color:var(--text3);cursor:pointer;text-decoration:underline;
+}
+.admin-area{display:none;margin-top:1rem;}
+.admin-area.open{display:block;}
+.admin-area input{
+  width:100%;padding:8px 12px;
+  background:var(--bg);border:1px solid var(--border);
+  color:var(--text);font-family:'Noto Sans JP',sans-serif;
+  font-size:0.85rem;outline:none;margin-top:4px;
+}
+.comments-list{display:flex;flex-direction:column;gap:1rem;}
+.comment-item{
+  background:var(--card);border:1px solid var(--border);
+  padding:1.2rem 1.5rem;
+  opacity:0;transform:translateY(10px);
+  animation:fadeUp 0.4s forwards;
+}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.comment-meta{
+  display:flex;justify-content:space-between;
+  margin-bottom:0.5rem;
+}
+.comment-author{
+  font-family:'Shippori Mincho',serif;
+  font-size:0.85rem;font-weight:700;color:var(--accent);
+}
+.comment-date{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:0.7rem;color:var(--text3);
+}
+.comment-text{font-size:0.88rem;line-height:1.8;color:var(--text2);}
+.comment-badge{
+  display:inline-block;font-size:0.6rem;
+  background:var(--accent2);color:#fff;
+  padding:1px 6px;border-radius:3px;
+  margin-left:6px;vertical-align:middle;
+}
+.status-msg{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:0.8rem;color:var(--accent);
+  margin-top:0.5rem;min-height:1.2em;
+}
+.view-all-btn{
+  display:block;text-align:center;margin-top:1.5rem;
+  background:none;border:1px solid var(--border);
+  padding:10px;color:var(--text2);cursor:pointer;
+  font-family:'Noto Sans JP',sans-serif;font-size:0.8rem;
+  letter-spacing:0.2em;width:100%;transition:all 0.2s;
+}
+.view-all-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ── MODAL ── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:200;
+  background:var(--modal-bg);
+  display:flex;align-items:center;justify-content:center;
+  padding:1rem;opacity:0;pointer-events:none;
+  transition:opacity 0.3s;
+}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{
+  background:var(--card);
+  max-width:600px;width:100%;
+  max-height:90vh;overflow-y:auto;
+  padding:2.5rem;position:relative;
+  transform:scale(0.95);transition:transform 0.3s;
+}
+.modal-overlay.open .modal{transform:scale(1);}
+.modal-close{
+  position:absolute;top:1rem;right:1rem;
+  background:none;border:none;font-size:1.5rem;
+  color:var(--text3);cursor:pointer;
+  transition:color 0.2s;
+}
+.modal-close:hover{color:var(--accent);}
+.modal-rank{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:0.7rem;letter-spacing:0.3em;
+  color:var(--accent2);margin-bottom:0.5rem;
+}
+.modal-name{
+  font-family:'Shippori Mincho',serif;
+  font-size:2rem;font-weight:800;color:var(--text);
+  margin-bottom:0.3rem;
+}
+.modal-era{font-size:0.8rem;color:var(--accent);letter-spacing:0.2em;margin-bottom:1.5rem;}
+.modal-section{margin-bottom:1.5rem;}
+.modal-section h4{
+  font-family:'Shippori Mincho',serif;
+  font-size:0.85rem;font-weight:700;
+  color:var(--accent);letter-spacing:0.2em;
+  margin-bottom:0.5rem;border-bottom:1px solid var(--border);padding-bottom:4px;
+}
+.modal-section p{font-size:0.88rem;line-height:2;color:var(--text2);}
+.modal-quote{
+  border-left:3px solid var(--accent);
+  padding:0.8rem 1rem;
+  background:var(--bg2);
+  font-style:italic;font-size:0.9rem;
+  color:var(--text);line-height:1.8;
+}
+.modal-artifacts{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;}
+.modal-artifact{
+  font-size:0.72rem;padding:4px 10px;
+  border:1px solid var(--border);color:var(--text2);
+  border-radius:3px;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--bg3);border-top:1px solid var(--border);
+  padding:3rem 2rem;text-align:center;
+}
+footer p{font-size:0.8rem;color:var(--text3);line-height:2;}
+
+/* ── FADE-IN ON SCROLL ── */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.7s,transform 0.7s;}
+.fade-in.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">日本女性偉人録</div>
+  <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#logic">選出ロジック</a>
+    <a href="#top3">TOP3</a>
+    <a href="#all">全20人</a>
+    <a href="#timeline">年表</a>
+    <a href="#comments">監修者コメント</a>
+    <button class="theme-btn" id="themeBtn">🌙 ダーク</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-deco2"></div>
+  <div class="hero-content">
+    <span class="hero-kamon">⛩</span>
+    <p class="hero-subtitle">Japan's Greatest Women in History</p>
+    <h1 class="hero-title">歴史偉人との<span>出会い</span></h1>
+    <p class="hero-desc">日本の歴史を彩り、時代を動かした女性たちの物語。<br>卑弥呼から津田梅子まで、20人の足跡を辿る。</p>
+    <a href="#top3" class="hero-cta">偉人たちを見る</a>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- LOGIC -->
+<section class="logic" id="logic">
+  <div class="section-header fade-in">
+    <span class="section-label">Selection Criteria</span>
+    <h2 class="section-title">選出ロジック</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="logic-grid">
+    <div class="logic-card fade-in">
+      <span class="logic-num">01</span>
+      <div class="logic-icon">📜</div>
+      <h3 class="logic-ttl">歴史的影響力</h3>
+      <p class="logic-txt">当時の政治・社会・文化に与えた具体的な変革の大きさを評価。史書への記録や後世への影響を重視。</p>
+    </div>
+    <div class="logic-card fade-in">
+      <span class="logic-num">02</span>
+      <div class="logic-icon">🌸</div>
+      <h3 class="logic-ttl">時代の先駆性</h3>
+      <p class="logic-txt">その時代の常識を超えた行動や思想を持っていたか。女性という立場での挑戦と突破を評価。</p>
+    </div>
+    <div class="logic-card fade-in">
+      <span class="logic-num">03</span>
+      <div class="logic-icon">🏛️</div>
+      <h3 class="logic-ttl">多分野への貢献</h3>
+      <p class="logic-txt">政治・文学・芸術・医療・教育など複数分野に跨る貢献度を総合評価。専門性と汎用性を両立。</p>
+    </div>
+    <div class="logic-card fade-in">
+      <span class="logic-num">04</span>
+      <div class="logic-icon">⚔️</div>
+      <h3 class="logic-ttl">逆境突破力</h3>
+      <p class="logic-txt">封建的制約、戦乱、貧困などの逆境をどう乗り越えたか。意志と行動力による変革の実績。</p>
+    </div>
+    <div class="logic-card fade-in">
+      <span class="logic-num">05</span>
+      <div class="logic-icon">🎓</div>
+      <h3 class="logic-ttl">現代への継承</h3>
+      <p class="logic-txt">現代の日本社会・文化・制度に受け継がれる遺産の有無。名言・作品・制度など具体的な継承物。</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOP3 -->
+<section class="top3" id="top3">
+  <div class="section-header fade-in">
+    <span class="section-label">Featured</span>
+    <h2 class="section-title">TOP 3 偉人</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="top3-grid">
+    <div class="top3-card rank1 fade-in" onclick="openModal(0)">
+      <span class="top3-rank">★ RANK 1</span>
+      <div class="top3-avatar">👑</div>
+      <h3 class="top3-name">卑弥呼</h3>
+      <p class="top3-era">弥生時代 ・ ？〜248年頃</p>
+      <p class="top3-desc">邪馬台国の女王として30国を統治。鬼道を用いた霊的権威と政治力で乱世を収め、中国に使節を派遣した最初の日本の支配者。</p>
+    </div>
+    <div class="top3-card fade-in" onclick="openModal(1)">
+      <span class="top3-rank">RANK 2</span>
+      <div class="top3-avatar">📖</div>
+      <h3 class="top3-name">紫式部</h3>
+      <p class="top3-era">平安時代 ・ 973〜1014年頃</p>
+      <p class="top3-desc">世界最古の長編小説「源氏物語」を著した文学の巨星。54帖・約100万字の大作は千年を超えて読み継がれる日本文学の頂点。</p>
+    </div>
+    <div class="top3-card fade-in" onclick="openModal(2)">
+      <span class="top3-rank">RANK 3</span>
+      <div class="top3-avatar">⚔️</div>
+      <h3 class="top3-name">北条政子</h3>
+      <p class="top3-era">鎌倉時代 ・ 1157〜1225年</p>
+      <p class="top3-desc">「尼将軍」として鎌倉幕府を指導。承久の乱で武士たちに訴えた演説は日本史上最も感動的なリーダーシップの一つとして語り継がれる。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ALL 20 -->
+<section class="all-women" id="all">
+  <div class="section-header fade-in">
+    <span class="section-label">All Rankings</span>
+    <h2 class="section-title">全20人一覧</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="filter-bar fade-in">
+    <button class="filter-btn active" onclick="filterWomen('all',this)">すべて</button>
+    <button class="filter-btn" onclick="filterWomen('政治',this)">政治</button>
+    <button class="filter-btn" onclick="filterWomen('文学',this)">文学</button>
+    <button class="filter-btn" onclick="filterWomen('武将',this)">武将</button>
+    <button class="filter-btn" onclick="filterWomen('教育',this)">教育</button>
+    <button class="filter-btn" onclick="filterWomen('芸術',this)">芸術</button>
+    <button class="filter-btn" onclick="filterWomen('医療',this)">医療</button>
+  </div>
+  <div class="women-grid" id="womenGrid"></div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline" id="timeline">
+  <div class="section-header fade-in">
+    <span class="section-label">Timeline</span>
+    <h2 class="section-title">時代別年表</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline-wrap">
+    <div class="tl-item fade-in">
+      <div class="tl-side">
+        <div class="tl-card">
+          <span class="tl-era">弥生・古墳時代</span>
+          <h3 class="tl-ttl">卑弥呼・神功皇后</h3>
+          <p class="tl-txt">邪馬台国の女王卑弥呼が中国魏に使節を派遣。神功皇后は三韓征伐の伝説で知られる。</p>
+        </div>
+      </div>
+      <div class="tl-center"><div class="tl-dot"></div></div>
+      <div class="tl-side"></div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-side"></div>
+      <div class="tl-center"><div class="tl-dot"></div></div>
+      <div class="tl-side">
+        <div class="tl-card">
+          <span class="tl-era">奈良時代</span>
+          <h3 class="tl-ttl">元明天皇・元正天皇</h3>
+          <p class="tl-txt">二代続けての女性天皇が日本の国家基盤を整備。古事記・日本書紀の編纂もこの時代に完成。</p>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-side">
+        <div class="tl-card">
+          <span class="tl-era">平安時代</span>
+          <h3 class="tl-ttl">紫式部・清少納言・小野小町</h3>
+          <p class="tl-txt">平仮名文化の花開いた時代。源氏物語・枕草子など世界的文学が誕生。和歌の名人たちが活躍。</p>
+        </div>
+      </div>
+      <div class="tl-center"><div class="tl-dot"></div></div>
+      <div class="tl-side"></div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-side"></div>
+      <div class="tl-center"><div class="tl-dot"></div></div>
+      <div class="tl-side">
+        <div class="tl-card">
+          <span class="tl-era">鎌倉・室町時代</span>
+          <h3 class="tl-ttl">北条政子・日野富子</h3>
+          <p class="tl-txt">武家社会でも女性が政治の中枢へ。尼将軍政子は幕府の精神的支柱、富子は将軍家の実権を握る。</p>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-side">
+        <div class="tl-card">
+          <span class="tl-era">戦国・安土桃山時代</span>
+          <h3 class="tl-ttl">立花誾千代・細川ガラシャ</h3>
+          <p class="tl-txt">戦乱の時代に個性輝く女性たちが登場。城主として武将として、信念を貫いた生涯が語り継がれる。</p>
+        </div>
+      </div>
+      <div class="tl-center"><div class="tl-dot"></div></div>
+      <div class="tl-side"></div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-side"></div>
+      <div class="tl-center"><div class="tl-dot"></div></div>
+      <div class="tl-side">
+        <div class="tl-card">
+          <span class="tl-era">江戸時代</span>
+          <h3 class="tl-ttl">出雲阿国・葛飾北斎娘</h3>
+          <p class="tl-txt">歌舞伎を創始した出雲阿国。北斎の娘・応為は「吉原格子先之図」で独自の画風を確立した女性絵師。</p>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-side">
+        <div class="tl-card">
+          <span class="tl-era">明治・近代</span>
+          <h3 class="tl-ttl">津田梅子・樋口一葉・与謝野晶子</h3>
+          <p class="tl-txt">女性教育・文学・社会運動の先駆者たちが明治の近代化を担う。津田梅子は女子高等教育の礎を築いた。</p>
+        </div>
+      </div>
+      <div class="tl-center"><div class="tl-dot"></div></div>
+      <div class="tl-side"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENTS -->
+<section class="comments" id="comments">
+  <div class="section-header fade-in">
+    <span class="section-label">Supervisor's Note</span>
+    <h2 class="section-title">監修者コメント</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="comments-inner">
+    <div class="comment-form fade-in">
+      <h3>コメントを投稿する</h3>
+      <div class="form-group">
+        <label>お名前</label>
+        <input type="text" id="authorInput" placeholder="監修者名">
+      </div>
+      <div class="form-group">
+        <label>コメント</label>
+        <textarea id="contentInput" placeholder="歴史的見解・補足コメントをご記入ください"></textarea>
+      </div>
+      <button class="submit-btn" onclick="submitComment()">投稿する</button>
+      <p class="status-msg" id="statusMsg"></p>
+      <span class="admin-toggle" onclick="toggleAdmin()">🔑 作成者ログイン（全件表示）</span>
+      <div class="admin-area" id="adminArea">
+        <label style="font-size:0.75rem;color:var(--text2);">パスワード</label>
+        <input type="password" id="adminPass" placeholder="管理者パスワード">
+        <button class="submit-btn" style="margin-top:8px;" onclick="adminLogin()">ログイン</button>
+        <p class="status-msg" id="adminMsg"></p>
+      </div>
+    </div>
+    <div class="comments-list" id="commentsList">
+      <p style="color:var(--text3);font-size:0.85rem;text-align:center;">読み込み中...</p>
+    </div>
+    <button class="view-all-btn" id="viewAllBtn" style="display:none;" onclick="loadAllComments()">すべてのコメントを見る</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>日本の女性偉人録 — Japan's Greatest Women in History</p>
+  <p style="margin-top:0.5rem;">シニアアナリスト監修 ・ 歴史考証に基づく選出</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+// ── DATA ──
+const SUPABASE_URL = 'https://kwfmoubntsdycwqwyglc.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_cbvs5NCstPCE3lsL3NJcWg_CDVelyVr';
+const SUPABASE_REST = `${SUPABASE_URL}/rest/v1`;
+const ADMIN_PASS = 'kanshunin2024';
+
+const women = [
+  {rank:1,name:'卑弥呼',era:'弥生時代',years:'?〜248年頃',field:'政治',emoji:'👑',
+   bio:'邪馬台国の女王として約30の小国を統治。鬼道（呪術的宗教）によって民心を掌握し、239年に魏へ使節を送り「親魏倭王」の称号を得た。その死後には墓に百余人が殉葬されたと伝わる。',
+   quote:'鬼道を事とし、よく衆を惑わす。（魏志倭人伝より）',
+   artifacts:['銅鏡','鉄剣','勾玉','魏志倭人伝']},
+  {rank:2,name:'紫式部',era:'平安時代',years:'973〜1014年頃',field:'文学',emoji:'📖',
+   bio:'藤原道長の娘・彰子に仕えた女房。世界最古の長編小説「源氏物語」全54帖を執筆。光源氏を主人公に平安貴族の恋愛・権力・無常を描き、千年後も世界で読まれる。「紫式部日記」も名高い。',
+   quote:'この世をば わが世とぞ思ふ 望月の 欠けたることも なしと思えば',
+   artifacts:['源氏物語','紫式部日記','百人一首（収録歌）','五千円札肖像']},
+  {rank:3,name:'北条政子',era:'鎌倉時代',years:'1157〜1225年',field:'政治',emoji:'⚔️',
+   bio:'源頼朝の妻。頼朝死後は尼将軍として実権を握り、承久の乱（1221年）では武士たちへの演説で後鳥羽上皇軍に圧勝。「頼朝公の御恩は山よりも高く海よりも深し」の名演説は日本史に残る。',
+   quote:'頼朝公の御恩は山よりも高く、海よりも深い。今こそその恩に報いる時。',
+   artifacts:['吾妻鏡','寿福寺（創建）','鎌倉幕府記録']},
+  {rank:4,name:'清少納言',era:'平安時代',years:'966〜1025年頃',field:'文学',emoji:'🌸',
+   bio:'一条天皇の中宮・定子に仕えた才女。随筆「枕草子」は「春はあけぼの」で始まる日本初の随筆文学。鋭い観察眼とユーモアで宮廷生活を活写し、日本文学の礎を築いた。',
+   quote:'春はあけぼの。やうやう白くなりゆく山際、少し明かりて、紫だちたる雲の細くたなびきたる。',
+   artifacts:['枕草子','百人一首（収録歌）']},
+  {rank:5,name:'津田梅子',era:'明治時代',years:'1864〜1929年',field:'教育',emoji:'🎓',
+   bio:'6歳で岩倉使節団に随行し渡米。帰国後に女子英学塾（現・津田塾大学）を設立し女子高等教育の先駆者となった。五千円札の新デザイン（2024年〜）に採用される近代日本を代表する女性。',
+   quote:'女性が真に独立するためには、まず教育が必要です。',
+   artifacts:['津田塾大学','五千円札（2024年〜）','女子英学塾設立記念碑']},
+  {rank:6,name:'樋口一葉',era:'明治時代',years:'1872〜1896年',field:'文学',emoji:'✒️',
+   bio:'「たけくらべ」「にごりえ」など明治の貧困と女性の悲哀を描いた作家。わずか24歳で没したが残した作品群は日本近代文学の傑作。現在の五千円札（旧）の肖像として親しまれた。',
+   quote:'とにかく女に生まれたからには、たとえどのような境遇でも、文学でその価値を証明する。',
+   artifacts:['たけくらべ','にごりえ','五千円札（旧）肖像']},
+  {rank:7,name:'与謝野晶子',era:'明治〜昭和',years:'1878〜1942年',field:'文学',emoji:'🌺',
+   bio:'歌集「みだれ髪」で官能と情熱の新しい和歌を確立。日露戦争では弟を想う「君死にたまふことなかれ」で反戦を詠み社会に衝撃を与えた。11人の子を育てながら執筆・社会運動を続けた。',
+   quote:'やは肌の あつき血潮に ふれも見で さびしからずや 道を説く君',
+   artifacts:['みだれ髪','君死にたまふことなかれ','源氏物語（現代語訳）']},
+  {rank:8,name:'細川ガラシャ',era:'戦国時代',years:'1563〜1600年',field:'芸術',emoji:'✝️',
+   bio:'明智光秀の娘として生まれ細川忠興に嫁ぐ。本能寺の変後に幽閉されキリスト教に帰依。関ヶ原の戦いで人質になることを拒み壮絶な最期を遂げた。西洋にも「日本のジャンヌ・ダルク」と称された。',
+   quote:'散りぬべき 時知りてこそ 世の中の 花も花なれ 人も人なれ',
+   artifacts:['辞世の句','細川家文書','カトリック殉教者記録']},
+  {rank:9,name:'立花誾千代',era:'戦国時代',years:'1569〜1602年',field:'武将',emoji:'🏯',
+   bio:'九州の猛将・立花道雪の一人娘として生まれ、11歳で家督を継いだ女性城主。父の死後は高橋統虎（立花宗茂）を婿に迎えるも自らも武将として戦場に赴いた稀代の女武将。',
+   quote:'武士の子として生まれた以上、城を守ることが私の使命。',
+   artifacts:['立花家文書','柳川城跡','九州の戦国史料']},
+  {rank:10,name:'出雲阿国',era:'江戸初期',years:'1572〜？年',field:'芸術',emoji:'🎭',
+   bio:'出雲大社の巫女出身とされ、京都四条河原での念仏踊りが歌舞伎の起源となった。女性が演じた「かぶき踊り」は爆発的に流行し、後に男性のみの「歌舞伎」へと発展した芸能の祖。',
+   quote:'踊りとは神への祈り、そして人々への贈り物。',
+   artifacts:['歌舞伎（起源）','出雲大社関連文書','慶長見聞集']},
+  {rank:11,name:'神功皇后',era:'古墳時代',years:'169〜269年頃（伝説）',field:'政治',emoji:'🌊',
+   bio:'仲哀天皇の皇后。天皇崩御後に三韓征伐（朝鮮半島遠征）を行ったとされる伝説的女帝。神懸かりによる神託を受け、腹帯で出産を遅らせ戦に臨んだという伝承が残る。',
+   quote:'神の御心に従い、海を渡り、国を治めることが我が使命。',
+   artifacts:['日本書紀','古事記','住吉大社（信仰の中心）']},
+  {rank:12,name:'元明天皇',era:'奈良時代',years:'661〜721年',field:'政治',emoji:'📜',
+   bio:'第43代天皇として「和同開珎」の鋳造、平城京遷都、古事記の完成を実現。持統天皇の娘として皇位を継ぎ、日本の国家基盤を整備した実務型女帝。奈良時代の礎を築いた。',
+   quote:'国の礎は文字にあり。歴史を記すことで国は永遠に生き続ける。',
+   artifacts:['古事記','和同開珎','平城京跡']},
+  {rank:13,name:'小野小町',era:'平安時代',years:'825〜900年頃',field:'文学',emoji:'🌷',
+   bio:'平安時代を代表する歌人。六歌仙・三十六歌仙の一人として絶世の美女と称された。恋愛と無常を詠んだ和歌は千年後も愛され、「花の色は うつりにけりな いたづらに」は教科書にも載る。',
+   quote:'花の色は うつりにけりな いたづらに わが身世にふる ながめせしまに',
+   artifacts:['百人一首（収録歌）','六歌仙伝説','小野小町ゆかりの地（全国）']},
+  {rank:14,name:'日野富子',era:'室町時代',years:'1440〜1496年',field:'政治',emoji:'💰',
+   bio:'足利義政の妻として応仁の乱に深く関与。金融業・関所設置で莫大な財を蓄え「悪女」とも称されるが、乱世の中で将軍家を支えた実力者。女性政治家の先駆けとして再評価が進む。',
+   quote:'乱世を生き抜くには、財と情報と決断力が必要。',
+   artifacts:['応仁の乱関連史料','室町幕府記録']},
+  {rank:15,name:'淀殿',era:'戦国〜江戸初期',years:'1569〜1615年',field:'政治',emoji:'🏯',
+   bio:'浅井長政と市の娘として生まれ、豊臣秀吉の側室となり秀頼を産む。大坂の陣では秀頼と共に大坂城で自害。波乱万丈の生涯は数多くの小説・ドラマに描かれる戦国最後の女性権力者。',
+   quote:'秀頼と共に豊臣の誇りを守り抜く。それが私の生きる意味。',
+   artifacts:['大坂城跡','豊臣家文書','茶々ゆかりの寺社']},
+  {rank:16,name:'春日局',era:'江戸時代',years:'1579〜1643年',field:'政治',emoji:'🏮',
+   bio:'三代将軍・徳川家光の乳母として幕政に影響を与えた女性。家光の精神的支柱として君臨し、将軍の権威確立に貢献。朝廷との折衝も行い「大奥」の礎を作ったとされる。',
+   quote:'将軍の御心を守ることこそ、この春日の使命にございます。',
+   artifacts:['大奥制度','麟祥院（墓所）','江戸幕府記録']},
+  {rank:17,name:'持統天皇',era:'飛鳥〜奈良時代',years:'645〜703年',field:'政治',emoji:'🌾',
+   bio:'第41代天皇として藤原京を完成させ律令国家の基盤を整備。夫・天武天皇の遺志を継ぎ政治を安定させた。「春すぎて 夏きにけらし 白妙の 衣干すてふ 天の香具山」は百人一首に選ばれた名歌。',
+   quote:'春すぎて 夏来にけらし 白妙の 衣干すてふ 天の香具山',
+   artifacts:['藤原京跡','日本書紀','百人一首（収録歌）']},
+  {rank:18,name:'瀬戸内寂聴',era:'昭和〜令和',years:'1922〜2021年',field:'文学',emoji:'📿',
+   bio:'波乱の人生を送った後に出家。「源氏物語」現代語訳は累計300万部超の大ベストセラー。99歳まで執筆・法話を続け、多くの人の心の支えとなった現代を代表する女性作家・僧侶。',
+   quote:'愛することは許すこと。生きることは許されること。',
+   artifacts:['源氏物語（現代語訳）','夏の終り','寂庵（京都）']},
+  {rank:19,name:'緒方貞子',era:'昭和〜平成',years:'1927〜2019年',field:'教育',emoji:'🌍',
+   bio:'国連難民高等弁務官として10年以上難民支援を指揮。「難民に国籍はない」という信念のもと冷戦後の世界で活躍。クルド難民・ルワンダ難民など数百万人の命を救った日本が誇る国際人道活動家。',
+   quote:'難民に国籍はない。人間として助けるべき時に助けるだけです。',
+   artifacts:['UNHCR活動記録','緒方貞子平和開発研究所','各国勲章']},
+  {rank:20,name:'市川房枝',era:'大正〜昭和',years:'1893〜1981年',field:'教育',emoji:'✊',
+   bio:'女性参政権運動の先駆者。1924年に婦人参政権獲得期成同盟会を設立。戦後は参議院議員として活躍し、政治腐敗追放運動にも取り組んだ。日本フェミニズム運動の母と称される。',
+   quote:'女性が政治に参加することは、民主主義の完成です。',
+   artifacts:['婦選会館','市川房枝記念会','参議院議員記録']},
+];
+
+// ── RENDER GRID ──
+function renderGrid(){
+  const grid = document.getElementById('womenGrid');
+  grid.innerHTML = women.map(w=>`
+    <div class="woman-card fade-in" data-field="${w.field}" onclick="openModal(${w.rank-1})">
+      <span class="woman-rank"># ${w.rank}</span>
+      <div class="woman-avatar">${w.emoji}</div>
+      <h3 class="woman-name">${w.name}</h3>
+      <p class="woman-era">${w.era}</p>
+      <span class="woman-field">${w.field}</span>
+    </div>
+  `).join('');
+  observeFadeIn();
+}
+
+function filterWomen(field, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.woman-card').forEach(c=>{
+    if(field==='all'||c.dataset.field===field) c.classList.remove('hidden');
+    else c.classList.add('hidden');
+  });
+}
+
+// ── MODAL ──
+function openModal(idx){
+  const w = women[idx];
+  document.getElementById('modalContent').innerHTML = `
+    <p class="modal-rank">RANK ${w.rank} / ${w.field}</p>
+    <h2 class="modal-name">${w.name}</h2>
+    <p class="modal-era">${w.era} ・ ${w.years}</p>
+    <div class="modal-section">
+      <h4>📜 生涯と業績</h4>
+      <p>${w.bio}</p>
+    </div>
+    <div class="modal-section">
+      <h4>💬 名言・名歌</h4>
+      <div class="modal-quote">${w.quote}</div>
+    </div>
+    <div class="modal-section">
+      <h4>🏛️ 関連文物・遺産</h4>
+      <div class="modal-artifacts">${w.artifacts.map(a=>`<span class="modal-artifact">${a}</span>`).join('')}</div>
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOutside(e){
+  if(e.target===document.getElementById('modalOverlay')) closeModal();
+}
+
+// ── THEME ──
+const themeBtn = document.getElementById('themeBtn');
+let dark = localStorage.getItem('theme')==='dark';
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', dark?'dark':'light');
+  themeBtn.textContent = dark ? '☀️ ライト' : '🌙 ダーク';
+  localStorage.setItem('theme', dark?'dark':'light');
+}
+applyTheme();
+themeBtn.addEventListener('click',()=>{dark=!dark;applyTheme();});
+
+// ── NAV ──
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// ── SCROLL FADE ──
+function observeFadeIn(){
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+  },{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+}
+observeFadeIn();
+
+// ── SUPABASE COMMENTS ──
+let isAdmin = false;
+let showingAll = false;
+
+async function loadComments(all=false){
+  const list = document.getElementById('commentsList');
+  const viewBtn = document.getElementById('viewAllBtn');
+  try{
+    let url = `${SUPABASE_REST}/comments?select=*&order=created_at.desc`;
+    if(!all && !isAdmin) url += '&limit=3';
+    const res = await fetch(url,{
+      headers:{
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await res.json();
+    if(!data||data.length===0){
+      list.innerHTML='<p style="color:var(--text3);font-size:0.85rem;text-align:center;">まだコメントがありません</p>';
+      viewBtn.style.display='none';
+      return;
+    }
+    list.innerHTML = data.map((c,i)=>`
+      <div class="comment-item" style="animation-delay:${i*0.1}s">
+        <div class="comment-meta">
+          <span class="comment-author">${escHtml(c.author_name)}${c.is_admin?'<span class="comment-badge">監修</span>':''}</span>
+          <span class="comment-date">${new Date(c.created_at).toLocaleDateString('ja-JP')}</span>
+        </div>
+        <p class="comment-text">${escHtml(c.content)}</p>
+      </div>
+    `).join('');
+    // 3件以上あって全件表示でなければ「すべて見る」ボタン
+    if(!all && !isAdmin && data.length>=3){
+      viewBtn.style.display='block';
+    } else {
+      viewBtn.style.display='none';
+    }
+  }catch(e){
+    list.innerHTML='<p style="color:var(--text3);font-size:0.85rem;text-align:center;">コメントの読み込みに失敗しました</p>';
+  }
+}
+
+async function loadAllComments(){
+  showingAll=true;
+  await loadComments(true);
+}
+
+async function submitComment(){
+  const author = document.getElementById('authorInput').value.trim();
+  const content = document.getElementById('contentInput').value.trim();
+  const msg = document.getElementById('statusMsg');
+  if(!author||!content){msg.textContent='お名前とコメントを入力してください。';return;}
+  msg.textContent='投稿中...';
+  try{
+    const res = await fetch(`${SUPABASE_REST}/comments`,{
+      method:'POST',
+      headers:{
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        author_name: author,
+        content: content,
+        is_admin: isAdmin
+      })
+    });
+    if(res.ok||res.status===201){
+      msg.textContent='✓ 投稿しました';
+      document.getElementById('authorInput').value='';
+      document.getElementById('contentInput').value='';
+      await loadComments(showingAll||isAdmin);
+    } else {
+      msg.textContent='投稿に失敗しました。しばらくお待ちください。';
+    }
+  }catch(e){
+    msg.textContent='通信エラーが発生しました。';
+  }
+}
+
+function toggleAdmin(){
+  document.getElementById('adminArea').classList.toggle('open');
+}
+
+function adminLogin(){
+  const pass = document.getElementById('adminPass').value;
+  const msg = document.getElementById('adminMsg');
+  if(pass===ADMIN_PASS){
+    isAdmin=true;
+    msg.textContent='✓ 管理者としてログインしました';
+    document.getElementById('adminArea').classList.remove('open');
+    loadComments(true);
+  } else {
+    msg.textContent='パスワードが違います';
+  }
+}
+
+function escHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── INIT ──
+renderGrid();
+loadComments();
+</script>
+</body>
+</html>
